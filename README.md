@@ -96,3 +96,10 @@ if "not interested" in comment:
 if "call me" in comment or "interested" in comment:
     score += 5
 ```
+---
+## Input and Output 
+
+<img width="777" height="893" alt="image" src="https://github.com/user-attachments/assets/b9c2ffd8-4204-4f96-8329-3f4963634ab1" /> 
+
+<img width="742" height="284" alt="image" src="https://github.com/user-attachments/assets/8d05869f-fc2f-47cc-98b2-a1865f6f7e78" />
+
