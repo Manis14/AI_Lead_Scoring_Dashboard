@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Lead Scoring Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 AI Lead Scoring Dashboard</h1>
+
+    <form action="/submit" method="post" class="lead-form">
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number:</label>
+        <input type="text" name="phone_number" required>
+      </div>
+
+      <div class="form-group">
+        <label>Age:</label>
+        <input type="number" name="age" required>
+      </div>
+
+      <div class="form-group">
+        <label>Credit Score:</label>
+        <input type="number" name="credit_score" required>
+      </div>
+
+      <div class="form-group">
+        <label>Income (INR):</label>
+        <input type="number" name="income" required>
+      </div>
+
+      <div class="form-group">
+        <label>Age Group:</label>
+        <select name="age_group" required>
+          <option value="">Select</option>
+          <option value="18-25">18–25</option>
+          <option value="26-35">26–35</option>
+          <option value="36-45">36–45</option>
+          <option value="46-55">46–55</option>
+          <option value="56-65">56–65</option>
+          <option value="65+">65+</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Family Background:</label>
+        <select name="family_background" required>
+          <option value="">Select</option>
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+          <option value="Married with Children">Married with Children</option>
+          <option value="Single Parent">Single Parent</option>
+          <option value="Divorced">Divorced</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Comments:</label>
+        <textarea name="comments" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn">Get Intent Score</button>
+    </form>
+
+    {% if result %}
+    <div class="result-card">
+      <h2>🎯 Scoring Result</h2>
+      <p><strong>Email:</strong> {{ result.email }}</p>
+      <p><strong>Initial Score:</strong> {{ result.initial_score }}</p>
+      <p><strong>Re-ranked Score:</strong> {{ result.reranked_score }}</p>
+      <p><strong>Comment:</strong> {{ result.comment }}</p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
